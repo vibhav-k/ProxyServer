@@ -1,10 +1,12 @@
 # ProxyServer
 
+## Version
 Python version - 3.4.4 
 
 Files included:
 	- webproxy.py
 
+## Usage
 How to run the webproxy script
 1. To run the webproxy script, trigger below command from the directory where webproxy.py is present
 		python webproxy.py [port_number] [cache_timeout]
@@ -13,6 +15,7 @@ How to run the webproxy script
 2. The cache timeout value is optional. If this value is not specified then the cacheTimeout is set to 10 seconds.
 3. The script will create cached files in a directory named 'cache'. If this directory is not present, the script will create this directory during runtime.
 
+## About
 webproxy.py
 1. Webproxy server can handle GET requests. The webproxy can handle HTTP 1.0 and HTTP 1.1 protocols.
 2. For other methods, the proxy server will send a "501 Not Implemented" error code.
@@ -23,7 +26,7 @@ webproxy.py
 7. If the requested resource is not available, then it will create a connection with the destination, obtained from the request, and retrieve the requested resource.
 8. Proxy server will then send this resource to the client.
 
-Design
+## Design
 1. The proxy server will serve each client requests in a separate thread.
 2. When serving these requests in each thread, the script will check in the cache directory for a cached resource for the request. 
 3. If found, it will send respond back to the client with this resource.
